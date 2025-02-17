@@ -4,6 +4,30 @@ class PropertyUnits {
         this.api = api;
     }
 
+    getAmenities(
+        propertyID        = "",
+        unitNumber        = "",
+        chargeCodeTypeIds = "", ) {
+
+        const request = {
+            "auth": {
+                "type" : "basic"
+            },
+            "requestId" : 15,
+            "method": {
+                "name" : "getAmenities",
+                "version" : "r1",
+                "params" : {
+                    "propertyID"        : propertyID,
+                    "unitNumber"        : unitNumber,
+                    "chargeCodeTypeIds" : chargeCodeTypeIds,
+                }
+            }
+        };
+
+        return this.api.makeRequest('/properties/' + propertyID + '/amenities', request);
+    }
+
     getMitsPropertyUnits(
         propertyIds, 
         availableUnitsOnly        = "",

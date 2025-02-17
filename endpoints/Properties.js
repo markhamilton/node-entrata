@@ -54,8 +54,8 @@ class Properties {
         return this.api.makeRequest('/properties/', request);
     }
 
-    getPropertyPickLists(propertyIds = "") {
-        
+    getPetTypes(propertyIds = "") {
+    
         const request = {
             "auth": {
                 "type" : "basic"
@@ -66,6 +66,85 @@ class Properties {
                 "version":"r1",
                 "params": {
                     "propertyIds" : propertyIds,
+                }
+            }
+        };
+    
+        return this.api.makeRequest('/properties/', request);
+    }
+    
+    getPhoneNumber(
+        switchCode = "",
+        ref        = "", ) {
+
+        const request = {
+            "auth": {
+                "type" : "basic"
+            },
+            "requestId" : 15,
+            "method": {
+                "name": "getPhoneNumber",
+                "version":"r1",
+                "params": {
+                    "switchCode" : switchCode,
+                    "ref"        : ref,
+                }
+            }
+        };
+
+        return this.api.makeRequest('/properties/', request);
+    }
+
+    getPropertyAnnouncements(propertyID = "" ) {
+
+        const request = {
+            "auth": {
+                "type" : "basic"
+            },
+            "requestId" : 15,
+            "method": {
+                "name": "getPropertyAnnouncements",
+                "version":"r1",
+                "params": {
+                    "propertyID" : property,
+                }
+            }
+        };
+        
+        return this.api.makeRequest('/properties/', request);
+    }
+
+    getPropertyPickLists(propertyIds = "") {
+
+        const request = {
+            "auth": {
+                "type" : "basic"
+            },
+            "requestId" : 15,
+            "method": {
+                "name": "getProperties",
+                "version":"r1",
+                "params": {
+                    "propertyIds" : propertyIds,
+                }
+            }
+        };
+
+        return this.api.makeRequest('/properties/', request);
+    }
+
+    getRentableItems(propertyId = "") {
+
+        const request = {
+            "auth": {
+                "type" : "basic"
+            },
+            "requestId" : 15,
+            "method": {
+                "name": "getRentableItems",
+                "version":"r1",
+                "params": {
+                    "propertyId" : property,
                 }
             }
         };

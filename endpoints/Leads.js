@@ -47,7 +47,26 @@ class Leads {
                     "eventDateTo"        : eventDateTo,
                 }
             }
-        }
+        };
+
+        return this.api.makeRequest('/leads/', request);
+    }
+
+    getLeadPickLists(propertyId = "") {
+
+        const request = {
+            "auth": {
+                "type" : "basic"
+            },
+            "requestId" : 15,
+            "method": {
+                "name" : "getLeadPickLists",
+                "version" : "r1",
+                "params" : {
+                    "propertyId" : property,
+                }
+            }
+        };
 
         return this.api.makeRequest('/leads/', request);
     }
