@@ -4,7 +4,11 @@ class Properties {
         this.api = api;
     }
 
-    getProperties(propertyIds = "", propertyLookupCode = "", showAllStatus = "0") {
+    getProperties(
+        propertyIds        = "", 
+        propertyLookupCode = "",
+        showAllStatus      = "0", ) {
+        
         const request = {
             "auth": {
                 "type" : "basic"
@@ -24,7 +28,12 @@ class Properties {
         return this.api.makeRequest('/properties/', request);
     }
 
-    getFloorPlans(propertyId, propertyFloorPlanIds = "", usePropertyPreferences = false, includeDisabledFloorplans = false) {
+    getFloorPlans(
+        propertyId, 
+        propertyFloorPlanIds      = "", 
+        usePropertyPreferences    = false, 
+        includeDisabledFloorplans = false,) {
+    
         const request = {
             "auth": {
                 "type" : "basic"
@@ -46,6 +55,7 @@ class Properties {
     }
 
     getPropertyPickLists(propertyIds = "") {
+        
         const request = {
             "auth": {
                 "type" : "basic"
